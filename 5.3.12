@@ -1,0 +1,13 @@
+# Задача 12 Дана строка. Выведите слово, которое в этой строке встречается чаще всего. Если таких слов несколько, выведите то, которое меньше в лексикографическом (алфавитном) порядке.
+###############################
+a = input().split()
+dic = {}
+for i in range(len(a)):
+    if a[i] in dic:
+        dic[a[i]] = dic[a[i]] + 1
+    else:
+        dic[a[i]] = 1
+
+max_count = max(dic.values())
+most_frequent = [k for k, v in dic.items() if v == max_count]
+print(min(most_frequent))
